@@ -14,14 +14,14 @@ const Profile = ({data}) =>{
     const [hours, setHours] = useState(0);
     
     const fetchCountries =()=>{
-        fetch("http://worldtimeapi.org/api/timezone")
+        fetch("https://worldtimeapi.org/api/timezone")
           .then(res=> res.json())
           .then(data=> setCountries(data))
           .catch(err=>console.log(err))
     }
 
     const fetchCurrentTime = ()=>{
-        fetch(`http://worldtimeapi.org/api/timezone/${timezone}`)
+        fetch(`https://worldtimeapi.org/api/timezone/${timezone}`)
           .then(res=>res.json())
           .then(data=> setClock(data))
           .catch(err=>console.log(err))
@@ -100,7 +100,7 @@ const Profile = ({data}) =>{
                 
             </div>
         </div>
-        <div style={{ textAlign:"center"}}>Profile Page</div>
+        <div style={{ textAlign:"center", margin: "20px"}}>Profile Page</div>
         <div style={{border:"1px solid grey", margin:"25px", padding:"20px"}}>
           <div className="profileHeader"  >
             <div><b>Name:</b> {data.name}</div>
